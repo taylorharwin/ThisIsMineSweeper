@@ -1,0 +1,24 @@
+{
+  "name": "minesweeperweb",
+  "version": "0.0.1",
+  "description": "minesweeper with react, redux",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/taylorharwin/ThisIsMineSweeper.git"
+  },
+  "author": "taylor.harwin@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/taylorharwin/ThisIsMineSweeper/issues"
+  },
+  "homepage": "https://github.com/taylorharwin/ThisIsMineSweeper#readme",
+  "dependencies": {
+    "lodash": "^4.0.0",
+    "react": "^0.14.6",
+    "redux": "^3.0.5"
+  }
+}
