@@ -61,7 +61,8 @@ Board.prototype.makeCell = function MakeCell(xPos, yPos){
   return {
     xPos: xPos,
     yPos: yPos,
-    bomb: false
+    bomb: false,
+    covered: true
   };
 };
 
