@@ -5,14 +5,16 @@ var actionTypes = {
 };
 
  function startGame(config){
+  debugger;
   return {
   	type: actionTypes.START_GAME,
   	config: config
   };
 }
-
  function endGame(){
-  return {type: actionTypes.END_GAME};
+  return {
+    type: actionTypes.END_GAME
+  };
 }
 
  function uncover(coords){
