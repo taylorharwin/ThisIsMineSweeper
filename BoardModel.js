@@ -66,6 +66,7 @@ Board.prototype.makeCell = function MakeCell(xPos, yPos){
   };
 };
 
+
 module.exports = Board;
 
 
