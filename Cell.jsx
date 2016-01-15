@@ -11,6 +11,11 @@ var Cell = react.createClass({
 		return this.props.adjacentBombs;
 	},
 
+	componentDidMount: function(){
+		var node = react.findDOMNode(this);
+		node.style.width = this.props.size + '%';
+	},
+
 	getCellClasses: function(){
 		var classes = {
 			"cell_content": true,
@@ -19,8 +24,6 @@ var Cell = react.createClass({
 			"showCount": !this.props.bomb && !this.props.covered
 		}
 	},
-
-
 
 	render: function(){
 		return (
