@@ -10,9 +10,10 @@ var actionTypes = {
   	config: config
   };
 }
-
  function endGame(){
-  return {type: actionTypes.END_GAME};
+  return {
+    type: actionTypes.END_GAME
+  };
 }
 
  function uncover(coords){
