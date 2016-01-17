@@ -7,10 +7,10 @@ var board = {
      { xPos: 0, yPos: 4, bomb: false, covered: true, adjacentBombs: 1 },
      { xPos: 0, yPos: 5, bomb: false, covered: true, adjacentBombs: 1 },
      { xPos: 0, yPos: 6, bomb: false, covered: true, adjacentBombs: 1 },
-     { xPos: 1, yPos: 0, bomb: true, covered: true, adjacentBombs: 1 },
+     { xPos: 1, yPos: 0, bomb: true, covered: false, adjacentBombs: 1 },
      { xPos: 1, yPos: 1, bomb: false, covered: true, adjacentBombs: 2 },
      { xPos: 1, yPos: 2, bomb: false, covered: true, adjacentBombs: 1 },
-     { xPos: 1, yPos: 3, bomb: false, covered: true, adjacentBombs: 0 },
+     { xPos: 1, yPos: 3, bomb: false, covered: false, adjacentBombs: 0 },
      { xPos: 1, yPos: 4, bomb: false, covered: true, adjacentBombs: 1 },
      { xPos: 1, yPos: 5, bomb: true, covered: true, adjacentBombs: 0 },
      { xPos: 1, yPos: 6, bomb: false, covered: true, adjacentBombs: 1 },
@@ -55,9 +55,8 @@ var board = {
 
   var react = require('react'),
   _ = require('lodash');
-
-      var GameRow = require('./GameRow.jsx');
-
+  var GameRow = require('./GameRow.jsx');
+  var SettingsContainer = require('./SettingsContainer.jsx');
   var root = document.getElementById('root');
 
   var GameBoard = react.createClass({
@@ -77,7 +76,10 @@ var board = {
     render: function(){
       return (
         <div className="game_container">
-        {this.createRows()}
+          <SettingsContainer />
+          <div className="board_container"s>
+            {this.createRows()}
+          </div>
         </div>
         )
     }

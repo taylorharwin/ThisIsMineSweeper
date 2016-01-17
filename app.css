@@ -17,6 +17,9 @@ h1 {
 }
 .game_container {
 	height: 100%;
+}
+.board_container {
+	height: 100%;
 	box-shadow: 4px 4px 4px #888888;
 }
 #root {
@@ -24,9 +27,7 @@ h1 {
 }
 #header {
 	position: relative;
-	top: 10px;
-	left: 10px;
-	padding-bottom: 10px;
+	top: 0;
 	width: 100%;
 	margin-left:auto;
 }
@@ -37,26 +38,40 @@ h1 {
 	position: relative;
 	height: 100%;
 	background-color: white;
-	
+	text-align: center;
 }
 
-.cell:hover {
-	border: 1px solid blue;
-	box-shadow: 2px 2px 2px #888888;
+.cell:hover{
+	border: 4px solid blue;
+	box-shadow: 10px 10px 10px #888888;
 	cursor: pointer;
 }
 
-.cell_content {
+.settings_container {
+	height: 50px;
+	display: inline-block;
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+}
+.board_settings {
+	width: 33.333%;
+	border: 1px solid black;
+	display: inline-block;
+}
+.cellContent {
 	margin: 0;
     position: absolute;
     top: 50%;
     left: 50%;
     margin-right: -50%;
+    font-size: 1.5em;
     transform: translate(-50%, -50%)
 }
 .bomb {
 	background-color: red;
 }
+
 .covered {
 	background-color: white;
 }

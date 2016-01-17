@@ -2,13 +2,14 @@ var react = require('react'),
 cx = require('react-classset');
 
 var Cell = react.createClass({
-
-
 	getCellContent: function(){
-		if (this.props.bomb){
-			return "Bomb"
+		if (!this.props.covered){
+			if (this.props.bomb){
+				return 'X';
+			} else {
+				return this.props.adjacentBombs;
+			}
 		}
-		return this.props.adjacentBombs;
 	},
 
 	componentDidMount: function(){
@@ -18,23 +19,23 @@ var Cell = react.createClass({
 
 	getCellClasses: function(){
 		var classes = {
-			"cell_content": true,
+			"cell": true,
 			"bomb": this.props.bomb,
-			"covered": false,
+			"covered": this.props.covered,
 			"showCount": !this.props.bomb && !this.props.covered
 		}
+		return cx(classes);
 	},
 
 	render: function(){
 		return (
 			<div
-			className="cell"
+			className = {this.getCellClasses()}
 			bomb = {this.props.bomb}
 			adjacentBombs = {this.props.adjacentBombs}
 			covered = {this.props.covered}
 			> 
-			<div
-			className = "cell_content"
+			<div className = {'cellContent'}
 			>
 			{this.getCellContent()}
 			</div>
