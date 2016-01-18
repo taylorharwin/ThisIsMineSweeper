@@ -19,7 +19,6 @@ function gameReducer(state, action) {
     case START_GAME:
     var size = Math.sqrt(action.config.gameSize);
     var numBombs = Math.floor(action.config.gameSize * action.config.difficulty);
-    debugger;
       return Object.assign({}, state, {gameStarted: true, gameLost: false, gameWon: false, board: new BoardModel(size, size, numBombs)});
 
     case END_GAME:

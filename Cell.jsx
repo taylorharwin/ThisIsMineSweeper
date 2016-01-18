@@ -53,7 +53,9 @@ var Cell = react.createClass({
 			"cell": true,
 			"bomb": this.props.bomb,
 			"covered": this.props.covered,
-			"showCount": !this.props.bomb && !this.props.covered
+			"showCount": !this.props.bomb && !this.props.covered,
+			"gameLost": this.props.hasLost,
+			"gameWon": this.props.hasWon || (!this.props.hasLost && !this.props.hasWon)
 		}
 		return cx(classes);
 	},

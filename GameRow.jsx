@@ -34,6 +34,8 @@ var GameRow = react.createClass({
 	},
 
 	getCells: function(){
+		var hasWon = this.props.hasWon,
+          hasLost = this.props.hasLost;
 		var handleClick = this.handleClick;
 		return _.map(this.props.row, function(cell, index, rows){
 			return (
@@ -44,6 +46,8 @@ var GameRow = react.createClass({
 				covered = {cell.covered}
 				adjacentBombs = {cell.adjacentBombs}
 				size = {(1 / rows.length) * 100}
+				hasWon = {hasWon}
+          		hasLost = {hasLost}
 				>
 				</Cell>
 				);
