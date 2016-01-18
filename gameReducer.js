@@ -45,8 +45,10 @@ function gameReducer(state, action) {
         });
         winLossState = {gameLost: true}
       }
-
-      if (_.every(state.board.cells, {covered: true})){
+      var coveredCells = _.filter(cells, function(cell){
+        return cell.covered
+      });
+      if (_.every(coveredCells, {bomb: true}) && !cell.bomb){
         winLossState = {gameWon: true}
       }
 

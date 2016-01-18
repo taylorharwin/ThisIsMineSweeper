@@ -12,7 +12,7 @@ var connect = require('react-redux').connect;
 	  medium: 0.5,
 	  hard: 0.8
 	};
-	var boardSizes = [9, 16, 36, 49];
+	var boardSizes = [9, 16, 36, 49, 64, 81, 100];
 
 	var SettingsContainer = react.createClass({
 

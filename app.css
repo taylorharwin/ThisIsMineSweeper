@@ -148,44 +148,48 @@ select {font-size: 1.4em;}
   100% {background-color: #777; }
 }
 
-
-@-webkit-keyframes demo {
-    0% {
-        background-color: Yellow;
-        opacity:1;
-        filter:alpha(opacity=100); /* IE */
--moz-opacity:1; /* Mozilla */
-opacity: 1; /* CSS3 */
-    }
-    22% {
-        background-color: Orange;
-        filter:alpha(opacity=100); /* IE */
--moz-opacity:1; /* Mozilla */
-opacity: 1; /* CSS3 */
-    }
-    77% {
-        background-color: Yellow;
-        filter:alpha(opacity=100); /* IE */
--moz-opacity:1; /* Mozilla */
-opacity: 1; /* CSS3 */
-    }
-    100% {
-        background-color: #777;
-        filter:alpha(opacity=100); /* IE */
--moz-opacity:1; /* Mozilla */
-opacity: 1; /* CSS3 */
-    }
+@-webkit-keyframes NEWGAME {
+  0%   {border-width: #006400;}
+  22%	{border-width: #98fb98;}
+  77% 	{border-width: #f4f3f4;}
+  100% {border-width: #777; }
 }
-    
+@-moz-keyframes NEWGAME {
+  0%   {border-width: 5px;}
+  22%	{border-width: 7px;}
+  77% 	{border-width: 10px;}
+  100% {border-width: 5px; }
+}
+@-o-keyframes NEWGAME {
+  0%   {border-width: 5px;}
+  22%	{border-width: 7px;}
+  77% 	{border-width: 10px;}
+  100% {border-width: 5px; }
+}
+@keyframes NEWGAME {
+  0%   {border-width: 5px;}
+  22%	{border-width: 7px;}
+  77% 	{border-width: 10px;}
+  100% {border-width: 5px; }
+}
+  
 .gameLost {
+	background-color: green;
     -webkit-animation-name: GAMELOST;
-    -webkit-animation-duration: 100ms;
-    -webkit-animation-iteration-count: 3;
+    -webkit-animation-duration: 500ms;
+    -webkit-animation-iteration-count: 1;
     -webkit-animation-timing-function: ease-in-out;
 }
 
 .gameWon {
 	-webkit-animation-name: GAMEWON;
+    -webkit-animation-duration: 500ms;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: ease-in-out;
+}
+
+.newGame {
+	-webkit-animation-name: NEWGAME;
     -webkit-animation-duration: 500ms;
     -webkit-animation-iteration-count: 1;
     -webkit-animation-timing-function: ease-in-out;
