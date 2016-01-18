@@ -35,7 +35,23 @@ Board.prototype.mapBombsToCells = function(){
   }, this));
 };
 
-Board.prototype.getBombsAroundCellCount = function(xCoord,yCoord, boardCells){
+Board.prototype.getNonBombNeighbors = function(xCoord, yCoord, boardCells){
+var neighborsWhichAreNotBombs =  boardCells.filter(function(cell){
+      return (
+        cell.xPos === xCoord && cell.yPos ===  yCoord + 1 ||
+        cell.xPos === xCoord && cell.yPos === yCoord - 1  ||
+        cell.yPos === yCoord && cell.xPos === xCoord + 1 ||
+        cell.yPos === yCoord && cell.xPos === xCoord - 1 ||
+        cell.xPos === xCoord + 1 && cell.yPos === yCoord + 1 ||
+        cell.xPos === xCoord - 1 && cell.yPos === yCoord - 1 ||
+        cell.xPos === xCoord + 1 && cell.yPos === yCoord - 1 ||
+        cell.xPos === xCoord - 1 && cell.yPos === yCoord + 1
+      )   && !cell.bomb;
+    });
+  return neighborsWhichAreNotBombs;
+};
+
+Board.prototype.getNeighbors = function(xCoord, yCoord, boardCells){
   var neighborsWhichAreBombs =  boardCells.filter(function(cell){
       return (
         cell.xPos === xCoord && cell.yPos ===  yCoord + 1 ||
@@ -48,7 +64,11 @@ Board.prototype.getBombsAroundCellCount = function(xCoord,yCoord, boardCells){
         cell.xPos === xCoord - 1 && cell.yPos === yCoord + 1
       )   && cell.bomb;
     });
-  return neighborsWhichAreBombs.length;
+  return neighborsWhichAreBombs;
+};
+
+Board.prototype.getBombsAroundCellCount = function(xCoord,yCoord, boardCells){
+  return this.getNeighbors(xCoord, yCoord, boardCells).length;
   };
 
 Board.prototype.getCounts = function(){

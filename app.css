@@ -6,8 +6,17 @@ body {
   background-color: #E8E8E8;
 }
 h1 {
-	font-size: 12px;
+	font-size: 1.25em;
 }
+button {
+	font-size: 2em;
+}
+span {
+	font-size: 1.1em;
+	padding-right: 10px;
+}
+
+select {font-size: 1.4em;}
 .app-container {
 	height: 80vh;
 	width: 80vw;
@@ -30,6 +39,7 @@ h1 {
 	top: 0;
 	width: 100%;
 	margin-left:auto;
+	text-align: center;
 }
 .cell {
 	box-sizing: border-box;
@@ -48,7 +58,7 @@ h1 {
 }
 
 .settings_container {
-	height: 50px;
+	padding: 15px 15px;
 	display: inline-block;
 	width: 100%;
 	margin-left: auto;
@@ -56,9 +66,9 @@ h1 {
 }
 .board_settings {
 	width: 33.333%;
-	border: 1px solid black;
 	display: inline-block;
 }
+
 .cellContent {
 	margin: 0;
     position: absolute;

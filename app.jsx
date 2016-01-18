@@ -1,11 +1,11 @@
-var render = require('react-dom').render;
+var react = require('react');
 var Provider = require('react-redux').Provider,
-    Container = require('./Container'),
+    Container = require('./Container.jsx'),
     gameStore = require('./gameStore');
 
 var root = document.getElementById('root');
 
-render(
+react.render(
     <Provider 
     store = {gameStore}
     >

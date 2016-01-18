@@ -1,6 +1,12 @@
 var react = require('react');
 var	Cell = require('./Cell.jsx');
+var _ = require('lodash');
+var	connect = require('react-redux').connect;
+var uncover = require('./actions.js').uncover;
 
+var select = function(state){
+	return state;
+};
 
 var GameRow = react.createClass({
 	propTypes: function(){
@@ -10,24 +16,38 @@ var GameRow = react.createClass({
 		};
 	},
 
+	handleClick: function(x, y){
+		this.props.dispatch(uncover({
+			xPos: x,
+			yPos: y
+			})
+		);
+	},
 	componentDidMount: function(){
 		var node = react.findDOMNode(this);
 		node.style.height = this.props.size + '%';
 	},
 
+	componentDidUpdate: function(){
+		var node = react.findDOMNode(this);
+		node.style.height = this.props.size + '%';
+	},
+
 	getCells: function(){
+		var handleClick = this.handleClick;
 		return _.map(this.props.row, function(cell, index, rows){
 			return (
 				<Cell
+				handleCellClick = {function(){handleClick.call( this, cell.xPos, cell.yPos)}}
+				key = {index}
 				bomb = {cell.bomb}
-				className = 'row'
 				covered = {cell.covered}
 				adjacentBombs = {cell.adjacentBombs}
 				size = {(1 / rows.length) * 100}
 				>
 				</Cell>
 				);
-		})
+		}, this)
 	},
 	render: function(){
 		return (
@@ -38,4 +58,4 @@ var GameRow = react.createClass({
 	}
 });
 
-module.exports = GameRow;
+module.exports = connect(select)(GameRow);

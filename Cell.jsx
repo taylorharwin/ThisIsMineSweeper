@@ -1,5 +1,6 @@
 var react = require('react'),
-cx = require('react-classset');
+	cx = require('react-classset');
+
 
 var Cell = react.createClass({
 	getCellContent: function(){
@@ -12,9 +13,39 @@ var Cell = react.createClass({
 		}
 	},
 
+	getInitialState: function(){
+		return {flagged: false}
+	},
 	componentDidMount: function(){
 		var node = react.findDOMNode(this);
 		node.style.width = this.props.size + '%';
+	},
+
+	componentDidUpdate: function(){
+		var node = react.findDOMNode(this);
+		node.style.width = this.props.size + '%';
+	},
+
+	handleCellClick: function(){
+		if (!this.timeout){
+			this.props.handleCellClick()
+		}
+	},
+
+	handleMouseDown: function(){
+		var state = this.state;
+		var toggleFlagged = _.bind(function(){
+			this.setState({flagged: !this.state.flagged})
+		}, this);
+
+		this.timeOut = setTimeout(function(){
+			toggleFlagged()
+		}, 1000);
+	},
+
+	handleMouseUp: function(){
+		clearTimeout(this.timeOut);
+		this.timeout = null;
 	},
 
 	getCellClasses: function(){
@@ -30,6 +61,9 @@ var Cell = react.createClass({
 	render: function(){
 		return (
 			<div
+			onMouseDown = {this.handleMouseDown}
+			onMouseUp = {this.handleMouseUp}
+			onClick = {this.handleCellClick}
 			className = {this.getCellClasses()}
 			bomb = {this.props.bomb}
 			adjacentBombs = {this.props.adjacentBombs}

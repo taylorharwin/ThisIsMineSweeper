@@ -5,7 +5,7 @@ var actionTypes = {
 };
 
  function startGame(config){
-  return {
+    return {
   	type: actionTypes.START_GAME,
   	config: config
   };
