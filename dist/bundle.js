@@ -16147,9 +16147,6 @@
 		},
 
 		getCellClasses: function(){
-			console.log({ "gameLost": this.props.hasLost,
-	     		 "gameWon": this.props.hasWon,
-	      		"newGame": !this.props.hasLost && !this.props.hasWon});
 
 			var classes = {
 				"cell": true,
@@ -16426,7 +16423,7 @@
 
 		__webpack_require__(1);
 		__webpack_require__(1);
-		(function webpackMissingModule() { throw new Error("Cannot find module \"bundle.jsx\""); }());
+		(function webpackMissingModule() { throw new Error("Cannot find module \"bundle.js\""); }());
 
 
 	/***/ },
@@ -32527,9 +32524,6 @@
 			},
 
 			getCellClasses: function(){
-				console.log({ "gameLost": this.props.hasLost,
-		     		 "gameWon": this.props.hasWon,
-		      		"newGame": !this.props.hasLost && !this.props.hasWon});
 
 				var classes = {
 					"cell": true,
