@@ -4,12 +4,17 @@ html {
 body {
   min-height: 100%;
   background-color: #E8E8E8;
+  overflow: hidden;
 }
 h1 {
 	font-size: 1.25em;
 }
+h2 {
+	font-weight: normal;
+	font-size: 1.25em;
+}
 button {
-	font-size: 2em;
+	font-size: 1.25em;
 }
 span {
 	font-size: 1.1em;
@@ -20,7 +25,6 @@ select {font-size: 1.4em;}
 .app-container {
 	height: 80vh;
 	width: 80vw;
-	text-align: center;
 	margin-left:auto;
 	margin-right: auto;
 }
@@ -61,8 +65,8 @@ select {font-size: 1.4em;}
 	padding: 15px 15px;
 	display: inline-block;
 	width: 100%;
-	margin-left: auto;
-	margin-right: auto;
+	text-align:center;
+	margin-left: -15px;
 }
 .board_settings {
 	width: 33.333%;
@@ -92,7 +96,6 @@ select {font-size: 1.4em;}
 .right {
 	float: right;
 }
-
 
 @-webkit-keyframes GAMELOST {
   0%   { background-color: #ffffb2; }
@@ -170,11 +173,11 @@ select {font-size: 1.4em;}
   0%   {border-width: 5px;}
   22%	{border-width: 7px;}
   77% 	{border-width: 10px;}
+
   100% {border-width: 5px; }
 }
   
 .gameLost {
-	background-color: green;
     -webkit-animation-name: GAMELOST;
     -webkit-animation-duration: 500ms;
     -webkit-animation-iteration-count: 1;
@@ -183,13 +186,6 @@ select {font-size: 1.4em;}
 
 .gameWon {
 	-webkit-animation-name: GAMEWON;
-    -webkit-animation-duration: 500ms;
-    -webkit-animation-iteration-count: 1;
-    -webkit-animation-timing-function: ease-in-out;
-}
-
-.newGame {
-	-webkit-animation-name: NEWGAME;
     -webkit-animation-duration: 500ms;
     -webkit-animation-iteration-count: 1;
     -webkit-animation-timing-function: ease-in-out;

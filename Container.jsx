@@ -16,12 +16,12 @@ var Container = react.createClass({
 
   render: function(){
     return (
-        <GameContainer 
-        boardCells = {JSON.parse(this.props.cells)}
-        hasWon = {this.props.hasWon}
-        hasLost = {this.props.hasLost}
-        >
-        </GameContainer>
+          <GameContainer 
+          boardCells = {JSON.parse(this.props.cells)}
+          hasWon = {this.props.hasWon}
+          hasLost = {this.props.hasLost}
+          >
+          </GameContainer>
       )
   }
 

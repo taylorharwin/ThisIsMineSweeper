@@ -20,6 +20,7 @@
   "homepage": "https://github.com/taylorharwin/ThisIsMineSweeper#readme",
   "dependencies": {
     "class-set": "0.0.4",
+    "express": "^4.13.3",
     "lodash": "^4.0.0",
     "react": "^0.14.6",
     "react-dom": "^0.14.6",
